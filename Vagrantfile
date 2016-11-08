@@ -62,18 +62,18 @@ Vagrant.configure(2) do |config|
     sudo echo "127.0.0.1 localhost" > /etc/hosts
     sudo echo "10.0.0.10 ubuntu1.tallerhadoop1.org ubuntu1" >> /etc/hosts
 
-    if [ ! -f /vagrant/hbase-1.2.3-bin.tar.gz ]
+    if [ ! -f /vagrant/hbase-1.2.4-bin.tar.gz ]
     then
-      sudo wget http://apache.rediris.es/hbase/1.2.3/hbase-1.2.3-bin.tar.gz -P /vagrant/
+      sudo wget http://apache.rediris.es/hbase/1.2.4/hbase-1.2.4-bin.tar.gz -P /vagrant/
     fi
-    if [ -f /vagrant/hbase-1.2.3-bin.tar.gz ]
+    if [ -f /vagrant/hbase-1.2.4-bin.tar.gz ]
     then
-      if [ ! -d /usr/local/hbase-1.2.3 ]
+      if [ ! -d /usr/local/hbase-1.2.4 ]
       then
-        sudo tar -zxvf /vagrant/hbase-1.2.3-bin.tar.gz -C /usr/local/
-        sudo ln -sf /usr/local/hbase-1.2.3/ /usr/local/hbase
+        sudo tar -zxvf /vagrant/hbase-1.2.4-bin.tar.gz -C /usr/local/
+        sudo ln -sf /usr/local/hbase-1.2.4/ /usr/local/hbase
         sudo chown -R vagrant /usr/local/hbase
-        sudo chown -R vagrant /usr/local/hbase-1.2.3
+        sudo chown -R vagrant /usr/local/hbase-1.2.4
         echo "export PATH=$PATH:/usr/local/hbase/bin" >> /home/vagrant/.bashrc
       fi
     fi
